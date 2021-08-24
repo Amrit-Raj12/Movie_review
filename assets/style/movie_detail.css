@@ -1,30 +1,36 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+
 * {
     box-sizing: border-box;
   }
   
 
-.flex-container {
+.mov_flex-container {
     display: flex;
     flex-wrap: wrap;
     font-size: 30px;
     text-align: center;
   }
   
-  .flex-item-left {
-    background-color: #f1f1f1;
+  .mov_flex-item-left {
+    background-color: #0F0F0F;
     padding: 10px;
-    flex: 50%;
+    flex: 35%;
   }
   
-  .flex-item-right {
-    background-color: dodgerblue;
+  .mov_flex-item-right {
+    background-color: #0F0F0F;
     padding: 10px;
-    flex: 50%;
+    flex: 55%;
+    border: 2px solid yellow;
   }
   
   @media (max-width: 800px) {
-    .flex-item-right, .flex-item-left {
+    .mov_flex-item-right, .mov_flex-item-left {
       flex: 100%;
+    }
+    .mov_flex-item-left{
+      width: 470px !important;
     }
   }
 
@@ -35,6 +41,20 @@
       height: 32.5625rem;
       width: 20rem;
       border-radius: 0.9375rem;
+  }
+
+  @media only screen and (max-width: 900px){
+    .img_box{
+      width: 20rem;
+      margin-left: 6.25rem;
+    }
+
+    .front, .back{
+      left: -5rem !important;
+    }
+    .fl_button_box{
+      margin-left: 6.25rem;
+    }
   }
 
 .flip-container {perspective: 1000px; transform-style: preserve-3d;}
@@ -50,6 +70,7 @@
 
 .flipper {transition: 0.6s; transform-style: preserve-3d;	position: relative;}
 
+
 /* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
@@ -58,7 +79,7 @@
 	position: absolute;
 	top: 0;
 	left: 1.5625rem;
-    color: white !important;
+  color: white !important;
 }
 
 .front > h6, .back>h6{
@@ -86,15 +107,17 @@ h1{ padding-top:25px; color:#fff;}
     margin-left: 12.5rem;
     margin-top: 0.625rem;
     padding: 15px 25px 15px 25px;
-    border:1px solid black;
+    /* border:1px solid black; */
     width: 20rem;
     height: 6.25rem;
 }
 
 .mov_name{
-    font-size: 2.25rem !important;
-    font-family: dosis;
-    word-spacing: 0.5rem;
+    
+    text-decoration: none;
+    font-family: 'Tourney', cursive;
+    color: #faed27;
+    font-size: 1.75rem;
 }
 
 .mov_name>span{
@@ -107,7 +130,9 @@ h1{ padding-top:25px; color:#fff;}
   float: left;
   font-size: 18px;
   margin-top: 26px;
-  color: yellow;
+  text-decoration: none;
+    font-family: 'Tourney', cursive;
+    color: #faed27;
 }
 
 .rating_num{
@@ -115,6 +140,9 @@ h1{ padding-top:25px; color:#fff;}
   font-size: 22px;
   margin-top: 8px;
   margin-left: 8px;
+  text-decoration: none;
+    font-family: 'Tourney', cursive;
+    color: #faed27;
 }
 
 .rating_rev{
@@ -124,6 +152,9 @@ h1{ padding-top:25px; color:#fff;}
   font-size: 16px;
   margin-left: -58px;
   margin-top: 40px;
+  text-decoration: none;
+  font-family: 'Tourney', cursive;
+  color: #faed27;
 }
 
 .vl {
@@ -133,14 +164,21 @@ h1{ padding-top:25px; color:#fff;}
 }
 .btm_hr{
   margin-top: 3px;
+  background-color: yellow !important;
+  color: yellow !important;
 }
 .tp_hr{
   margin-bottom: 3px;
+  background-color: yellow !important;
+  color: yellow !important;
 }
 
 .gv_rating>p{
   font-size: 22px;
   margin-right: 80px;
+  text-decoration: none;
+  font-family: 'Tourney', cursive;
+  color: #faed27;
 }
 
 .gv_rating{
@@ -150,7 +188,7 @@ h1{ padding-top:25px; color:#fff;}
 
 :root {
   --star-size: 40px;
-  --star-color: #fff;
+  --star-color: #f0f0f0;
   --star-background: #fc0;
 }
 .Stars {
@@ -166,4 +204,308 @@ h1{ padding-top:25px; color:#fff;}
   background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+
+.mvtab_heading {
+	color: #ccc;
+	text-align: center;
+}
+
+/*Fun begins*/
+.mvtab_container {
+	width: 100%;
+	margin: 0 auto;
+	/* padding-top: 70px; */
+	position: relative;
+}
+
+input, section {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+label {
+  font-weight: 700;
+  font-size: 14px;
+  display: block;
+  float: left;
+  width: 20%;
+  padding: 1.5em;
+    font-family: 'Tourney', cursive;
+    color: #faed27;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background: #0f0f0f;
+}
+
+#mvtab1:checked ~ #content1,
+#mvtab2:checked ~ #content2,
+#mvtab3:checked ~ #content3,
+#mvtab4:checked ~ #content4,
+#mvtab5:checked ~ #content5 {
+  display: block;
+  padding: 20px;
+  background: #0F0F0F;
+  color: #999;
+  border-bottom: 2px solid yellow;
+}
+
+.mvtab_container .mvtab-content p,
+.mvtab_container .mvtab-content h3 {
+  -webkit-animation: fadeInScale 0.7s ease-in-out;
+  -moz-animation: fadeInScale 0.7s ease-in-out;
+  animation: fadeInScale 0.7s ease-in-out;
+}
+.mvtab_container .mvtab-content h5,.mvtab-content p  {
+  text-align: left;
+}
+.mvtab-content h5{
+  font-size: 20px;
+}
+.mvtab-content h5>span{
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.mvtab-content p{
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.mvtab-content ul{
+  text-align: left;
+}
+
+.cast_list{
+  list-style: none;
+}
+.cast_list>li>a{
+  text-decoration: none;
+}
+.cast_list>li>a>span{
+  color: #f0f0f0;
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+.mvtab_container [id^="mvtab"]:checked + label {
+  background: #0F0F0F;
+  box-shadow: inset 0 3px yellow;
+}
+
+.mvtab_container [id^="mvtab"]:checked + label .fa {
+  color: yellow;
+}
+
+label .fa {
+  font-size: 1.3em;
+  margin: 0 0.4em 0 0;
+}
+
+/*Media query*/
+@media only screen and (max-width: 900px) {
+  label span {
+    display: none;
+  }
+  
+  .mvtab_container {
+    width: 98%;
+  }
+}
+
+/*Content Animation*/
+@keyframes fadeInScale {
+  0% {
+  	transform: scale(0.9);
+  	opacity: 0;
+  }
+  
+  100% {
+  	transform: scale(1);
+  	opacity: 1;
+  }
+}
+
+.no_wrap {
+  text-align:center;
+  color: yellow;
+}
+.link {
+  text-align:center;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	/* Compensate for excess margin on outer gallery flex items */
+	margin: -1rem -1rem;
+}
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 24rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+
+
+.av_container {
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.av_block {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 15px 2px #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px;
+  background-color: #666;
+}
+
+.block--img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  transform: rotateX(0deg);
+  transform-origin: top center;
+  transition: all 300ms ease-out;
+}
+
+.block1 {
+  background-image: url("https://wholesgame.com/wp-content/uploads/Netflix-Logo-Thumb-4-x-5.jpg");
+  background-size:cover;
+}
+
+.block2 {
+  background-image: url("https://seeklogo.com/images/D/disney-logo-9649A88458-seeklogo.com.png");
+  background-size:cover;
+}
+
+.block3 {
+  background-image: url("https://ecustomer.in/wp-content/uploads/2018/10/Hotstar.jpg");
+  background-size:cover;
+}
+
+.block4 {
+  background-image: url("https://img.freepik.com/free-vector/movie-theater-red-seats-cimena-screen_23-2147494044.jpg?size=338&ext=jpg");
+  background-size:cover;
+}
+
+.block--text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: #111;
+  color: antiquewhite;
+  transform: rotateX(120deg);
+  transform-origin: bottom center;
+  transition: all 300ms ease-in;
+}
+
+.av_block:hover .block--text {
+  transform: rotateX(0deg);
+}
+
+.av_block:hover .block--img {
+  transform: rotateX(-120deg);
+}
+
+.text--head {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  color: #fdca40;
+}
+
+.text--quote {
+  padding: 20px 10px 0px;
+  font-size: 18px;
+}
+
+.text--person {
+  position: relative;
+  bottom: -40px;
+  text-align: end;
+  font-weight: 600;
+  color: #fdca40;
+}
+
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 150px; 
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column>img{
+border-radius:35px;
 }
