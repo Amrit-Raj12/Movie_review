@@ -212,6 +212,7 @@ CREATE TABLE IF NOT EXISTS `content` (
   `country_id` int(11) NOT NULL,
   `total_earning` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` int(11) DEFAULT 0,
+  `is_popular` tinyint(1) DEFAULT 0,
   `type_id` int(11) DEFAULT 0,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
