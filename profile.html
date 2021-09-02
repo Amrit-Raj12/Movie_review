@@ -1,0 +1,376 @@
+<html lang="en" ng-app="BipApp">
+
+<head>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+ <link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,700|Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tourney:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style/style.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tourney:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style/style.css">
+  <meta name="viewport" content="initial-scale=1" />
+  
+  <link rel="stylesheet" href="assets/style/profile.css">
+</head>
+
+<style>
+  .nav-link:hover{
+      background-color: yellow !important;
+      color: black !important;
+  }
+</style>
+<body onload="initialize()">
+   <!-- Nav Start -->
+   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand mr-5" href="#"><img src="logo_without_text.png" alt="logo" height="80px" width="80px"></a>
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html" style="background: orange;">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+  
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Categories</a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Horror</a>
+            <a class="dropdown-item" href="#">Thriller</a>
+          </div>
+        </li>
+  
+      </ul>
+      <ul class="usr_prf">
+        <li style="margin: 10px;"><a class="prf" href="profile.html">Profile</a></li>
+        <li style="margin: 10px;"><a class="lgn" href="login.html">Login</a></li>
+      </ul>
+      <!-- Links -->
+  
+      <!-- <form id="search-form" class="form-inline">
+        <input
+          id="search"
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </form> -->
+    </div>
+    <!-- Collapsible content -->
+  
+  </nav>
+  <div ng-controller="BipCtrl" class="sample" layout="column">
+    <md-toolbar md-scroll-shrink>
+      <div class="md-toolbar-tools">
+        <h3>
+        <span class="page_heading" style="color: yellow !important;">Profile</span>
+      </h3>
+      </div>
+    </md-toolbar>
+    <md-content class="md-padding" style="background-color: #0F0F0F;">
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="PROFILE" style="color: yellow;">
+          <md-content style="background-color: #0F0F0F;">
+            <div ng-controller="BipCtrl" layout="column" class="inputBasicUsage" ng-app="BipApp">
+
+              <md-content layout-padding="" style="background-color: #0F0F0F;">
+                <form name="userForm">
+
+                  <div layout="" layout-sm="column">
+                    <md-input-container flex="">
+                      <label style="color: yellow;">First name</label>
+                      <input ng-model="user.firstName" style="color: yellow;">
+                    </md-input-container>
+                    <md-input-container flex="">
+                      <label style="color: yellow;">Last Name</label>
+                      <input ng-model="user.lastName" style="color: yellow;">
+                    </md-input-container>
+                  </div>
+
+
+                  <div layout="" layout-sm="column">
+                    <md-input-container flex=''>
+                      <label style="color: yellow;">Email</label>
+                      <input ng-model="user.email" type="email" style="color: yellow;">
+                    </md-input-container>
+                    <md-input-container flex=''>
+                      <label style="color: yellow;">Phone</label>
+                      <input ng-model="user.phone" type="phone" style="color: yellow;">
+                    </md-input-container>
+                  </div>
+
+                  <md-input-container flex="">
+                    <label style="color: yellow;">Address</label>
+                    <input ng-model="user.address" style="color: yellow;">
+                  </md-input-container>
+                  <!-- <md-input-container md-no-float="" >
+                    <input ng-model="user.address2" placeholder="Address 2" style="color: yellow;">
+                  </md-input-container> -->
+
+                  <div layout="" layout-sm="column" id="locationField">
+                    <md-input-container flex="">
+                      <label style="color: yellow;">City</label>
+                      <input ng-model="user.city" id="autocomplete" onFocus="geolocate()" type="text" style="color: yellow;">
+                    </md-input-container>
+                    <md-input-container flex="">
+                      <label style="color: yellow;">State</label>
+                      <input ng-model="user.state" style="color: yellow;">
+                    </md-input-container>
+                    <md-input-container flex="">
+                      <label style="color: yellow;">Postal Code</label>
+                      <input ng-model="user.postalCode" style="color: yellow;">
+                    </md-input-container>
+                  </div>
+
+                  <md-input-container flex="">
+                    <label style="color: yellow;">Country</label>
+                    <input ng-model="user.country" style="color: yellow;">
+                  </md-input-container>
+
+
+                  <md-input-container flex="">
+                    <label style="color: yellow;">Bio</label>
+                    <textarea ng-model="user.bio" columns="1" md-maxlength="200" style="color: yellow;"></textarea>
+                  </md-input-container>
+                  <section layout="row" layout-sm="column" layout-align="end">
+                    <md-button class="md-raised md-primary" style="color: yellow;">Update setting</md-button>
+                  </section>
+                </form>
+              </md-content>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="SECURITY" style="color: yellow;">
+          <div ng-controller="ListCtrl" layout="column" layout-sm="column">
+
+            <md-content class="md-padding" style="background-color: #0F0F0F;">
+              <form name="passwordForm">
+                <md-input-container flex="">
+                  <label style="color: yellow;">Current password</label>
+                  <input ng-model="user.pass" style="color: yellow;">
+                </md-input-container>
+                <md-input-container flex="">
+                  <label style="color: yellow;">New password</label>
+                  <input ng-model="user.newpass" style="color: yellow;">
+                </md-input-container>
+                <md-input-container flex="">
+                  <label style="color: yellow;">Confirm password </label>
+                  <input ng-model="user.checkpass" style="color: yellow;">
+                </md-input-container>
+                <fieldset class="standard-2">
+                  <section layout="row">
+                    <h3 class="profile" style="color: yellow;">Diactivate account</h3>
+                    <span flex></span>
+                    <md-switch class="md-warn-account" ng-model="setting.enabled"></md-switch>
+                    </md-list-item>
+                  </section>
+
+                  <p>If you deactivate your account your profile won’t be visible to other people on Biptik and people won’t be able to search for you. If you’d like to come back to Biptik anytime after you’ve deactivated your account, you can reactivate
+                    your account by logging in with your email and password. Remember that you will need to have access to the login email address for your account in order to reactivate it. If you can't get into your account, you can reset your password.</p>
+
+
+                  <section layout="row" layout-sm="column" layout-align="end">
+                    <md-button class="md-raised md-primary">Update setting</md-button>
+                  </section>
+                </fieldset>
+                <fieldset class="standard">
+                  <legend>
+                    <h3 class="profile">Close account</h3></legend><span>I understand that by clicking this button, I am willing to close my Biptik account. If you have used bips of services this month you will get checkout into your primary billing account outside of the service.</span>
+                  <br>
+                  <section layout="row" layout-sm="column" layout-align="end">
+                    <md-button class="md-warn md-raised" ng-click="showConfirm($event)">Close account</md-button>
+                  </section>
+                </fieldset>
+              </form>
+            </md-content>
+          </div>
+        </md-tab>
+        <!-- <md-tab label="NOTIFICATION">
+
+          <div ng-controller="ListCtrl" layout="column" layout-sm="column">
+
+            <md-list-item ng-repeat="topping in toppings">
+              <p> {{ topping.name }} </p>
+              <md-checkbox class="md-primary" ng-model="topping.wanted"></md-checkbox>
+            </md-list-item>
+            <md-divider></md-divider>
+
+
+          </div>
+        </md-tab> -->
+      </md-tabs>
+    </md-content>
+  </div>
+
+   <!-- Footer Start -->
+   <footer class="footer-section">
+    <div class="footer-cta pt-5 pb-5">
+      <div class="row">
+          <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div class="cta-text">
+                      <h4>Find us</h4>
+                      <span>123 Abc, xyz, Ind</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta">
+                  <i class="fas fa-phone"></i>
+                  <div class="cta-text">
+                      <h4>Call us</h4>
+                      <span>9876543210</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-4 col-md-4 mb-30">
+              <div class="single-cta">
+                  <i class="far fa-envelope-open"></i>
+                  <div class="cta-text">
+                      <h4>Mail us</h4>
+                      <span>mail@info.com</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    <div class="container">
+        
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="logo_without_text.png" height="150" width="150" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="footer-text">
+                            <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                            elit,Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">services</a></li>
+                            <li><a href="#">portfolio</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Expert Team</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Latest News</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2021, All Right Reserved <a href="#">Amrit</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+  <!-- Footer End -->
+  <!-- Angular Material Dependencies -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+
+  <script src="script/profile_script.js"></script>
+
+  <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+</body>
+
+</html>
