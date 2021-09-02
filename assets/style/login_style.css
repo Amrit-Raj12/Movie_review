@@ -1,6 +1,4 @@
-body {
-    margin:0;
-    padding:0;
+.log_box {
     font-family: sans-serif;
     background: #0F0F0F;
     min-height: 100vh;
